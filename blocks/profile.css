@@ -139,6 +139,7 @@
   .profile__edit {
     justify-content: center;
     margin-top: 32px;
+    margin: 0 auto;
   }
 
   .profile__new-post {
