@@ -1,0 +1,48 @@
+.card {
+  width: 100%;
+}
+
+.card__image-wrapper {
+  margin: 0;
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.card__image {
+  margin: 0;
+  width: 100%;
+  position: absolute;
+  top: -25%;
+  left: 0;
+}
+
+.card__footer {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 90%;
+}
+
+.card__like-icon {
+  opacity: 0.4;
+  height: fit-content;
+  transition: opacity 200ms ease-in-out;
+}
+
+.card__like-icon:hover {
+  opacity: 1;
+}
