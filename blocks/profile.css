@@ -48,6 +48,7 @@
 
 .profile__edit {
   display: flex;
+  width: fit-content;
   opacity: 0.6;
   transition: opacity 200ms ease;
 }
