@@ -13,7 +13,7 @@ Spots is a social media website used for sharing photos online
 
 ## Introduction Video
 
-[The Video](https://drive.google.com/file/d/1PY6Ova-nT56Sf6VQG_92nmXwF6eoWykW/view?usp=drive_link)
+[The Video](https://drive.google.com/file/d/1PY6Ova-nT56Sf6VQG_92nmXwF6eoWykW/view?usp=sharing)
 
 ## Github Link
 

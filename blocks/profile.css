@@ -7,12 +7,14 @@
 
 .profile__picture {
   border-radius: 8px;
+  width: 190px;
+  height: 190px;
 }
 
 .profile__text {
   margin: 0;
   margin-left: 20px;
-  width: 30%;
+  max-width: 420px;
   font-weight: 500;
   line-height: 1.3;
   display: flex;
@@ -42,17 +44,16 @@
   line-clamp: 3;
 }
 
-.profile__footer {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-}
-
 .profile__edit {
   display: flex;
   width: fit-content;
   opacity: 0.6;
   transition: opacity 200ms ease;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #212121;
 }
 
 .profile__edit:hover {
@@ -61,14 +62,6 @@
 
 .profile__edit-logo {
   margin: 0 8px 0 0;
-}
-
-.profile__edit-text {
-  margin: 0;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.3;
-  color: #212121;
 }
 
 .profile__new-post {
@@ -84,6 +77,10 @@
   font-size: 16px;
   line-height: 1.3;
   color: #fcf5e5;
+  cursor: pointer;
+  width: 157px;
+  height: 52px;
+  border: none;
 }
 
 .profile__new-post:hover {
@@ -92,18 +89,6 @@
 
 .profile__new-post-plus {
   margin: 0 8px 0 0;
-}
-
-@media screen and (max-width: 912px) {
-  .profile__header {
-    font-size: 28px;
-  }
-}
-
-@media screen and (max-width: 796px) {
-  .profile__header {
-    font-size: 24px;
-  }
 }
 
 @media screen and (max-width: 690px) {
@@ -121,7 +106,8 @@
   }
 
   .profile__picture {
-    width: 30%;
+    width: 80px;
+    height: 80px;
     margin: 0 auto;
   }
 
@@ -131,7 +117,7 @@
 
   .profile__header {
     margin-top: 12px;
-    font-size: 32px;
+    font-size: 20px;
   }
 
   .profile__description {
@@ -148,29 +134,5 @@
     margin-top: 20px;
     justify-content: center;
     align-self: stretch;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .profile__header {
-    font-size: 28px;
-  }
-}
-
-@media screen and (max-width: 440px) {
-  .profile__header {
-    font-size: 24px;
-  }
-}
-
-@media screen and (max-width: 440px) {
-  .profile__header {
-    font-size: 24px;
-  }
-}
-
-@media screen and (max-width: 340px) {
-  .profile__header {
-    font-size: 20px;
   }
 }
