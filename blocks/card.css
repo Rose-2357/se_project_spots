@@ -40,6 +40,7 @@
   opacity: 0.4;
   height: fit-content;
   transition: opacity 200ms ease-in-out;
+  cursor: pointer;
 }
 
 .card__like-icon:hover {
