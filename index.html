@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="An interactive social media website fot sharing photos"
+      content="An interactive social media website for sharing photos"
     />
     <meta name="keywords" content="photos, social media, sharing" />
     <meta name="author" content="Rose Ghaffari" />
@@ -31,7 +31,7 @@
             <button class="profile__edit" type="button">
               <img
                 src="./images/pencil.svg"
-                alt="A PEncil"
+                alt="A pencil"
                 class="profile__edit-logo"
               />
               Edit Profile
@@ -105,7 +105,7 @@
             <figure class="card__image-wrapper">
               <img
                 src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-                alt="A big halway with glass walls"
+                alt="A big hallway with glass walls"
                 class="card__image"
               />
             </figure>
@@ -132,6 +132,63 @@
       <footer class="footer">
         <p class="footer__text">2023 © Spots</p>
       </footer>
+      <!--
+      THE MODALS
+      -->
+      <div class="modal">
+        <div class="modal__container">
+          <h2 class="modal__header">Edit profile</h2>
+          <button class="modal__close-button"></button>
+          <form class="modal__form">
+            <label class="modal__label" for="modal-form-name">Name</label>
+            <input
+              type="text"
+              name="modal-form-name"
+              id="modal-form-name"
+              class="modal__input"
+              placeholder="Type your name"
+            />
+            <label class="modal__label" for="modal-form-description"
+              >Description</label
+            >
+            <input
+              type="text"
+              name="modal-form-description"
+              id="modal-form-description"
+              class="modal__input"
+              placeholder="Describe yourself"
+            />
+            <button class="modal__save-button">Save</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal">
+        <div class="modal__container">
+          <h2 class="modal__header">New post</h2>
+          <button class="modal__close-button"></button>
+          <form class="modal__form">
+            <label class="modal__label" for="modal-form-image-link"
+              >Image link</label
+            >
+            <input
+              type="url"
+              name="modal-form-image-link"
+              id="modal-form-image-link"
+              class="modal__input"
+              placeholder="Paste a link to the picture"
+            />
+            <label class="modal__label" for="modal-form-caption">Caption</label>
+            <input
+              type="text"
+              name="modal-form-caption"
+              id="modal-form-caption"
+              class="modal__input"
+              placeholder="Type your caption"
+            />
+            <button class="modal__save-button">Save</button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>
