@@ -11,10 +11,16 @@
   height: 100vh;
   background-color: #21212166;
   padding: 0 10px;
+  --close-animation-duration: 0.5s;
 }
 
 .modal_is-opened {
   visibility: visible;
+  animation: modal-fade-in 0.5s ease;
+}
+
+.modal_close-animation {
+  animation: modal-fade-out var(--close-animation-duration) ease forwards;
 }
 
 .modal__container {
@@ -124,5 +130,23 @@
   .modal__save-button {
     margin-top: 24px;
     width: 100%;
+  }
+}
+
+@keyframes modal-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
