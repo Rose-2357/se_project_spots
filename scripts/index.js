@@ -15,7 +15,7 @@ const newPostModal = document.querySelector("#new-post-modal");
 const newPostBtn = document.querySelector(".profile__new-post");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-button");
 const newPostLinkInput = newPostModal.querySelector("#modal-form-image-link");
-const newPostCaotionInput = newPostModal.querySelector("#modal-form-caption");
+const newPostCaptionInput = newPostModal.querySelector("#modal-form-caption");
 const newPostForm = newPostModal.querySelector(".modal__form");
 
 editProfileBtn.addEventListener("click", () => {
@@ -46,7 +46,7 @@ editProfileForm.addEventListener("submit", (e) => {
 newPostForm.addEventListener("submit", (e) => {
   e.preventDefault();
   console.log(newPostLinkInput.value);
-  console.log(newPostCaotionInput.value);
+  console.log(newPostCaptionInput.value);
   closeModal(newPostModal);
 });
 
