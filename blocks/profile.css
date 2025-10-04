@@ -35,6 +35,7 @@
 .profile__description {
   margin: 0;
   font-size: 16px;
+  opacity: 0.7;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -47,8 +48,9 @@
   background-color: transparent;
   border: none;
   display: flex;
+  gap: 8px;
   width: fit-content;
-  opacity: 0.6;
+  opacity: 0.7;
   transition: opacity 200ms ease;
   cursor: pointer;
   font-weight: 500;
@@ -62,18 +64,16 @@
   opacity: 1;
 }
 
-.profile__edit-logo {
-  margin: 0 8px 0 0;
-}
-
 .profile__new-post {
   margin: 0;
   background-color: #212121;
-  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  margin: auto 0 0 auto;
   padding: 0;
   border-radius: 8px;
   align-items: center;
-  margin-top: auto;
+  justify-content: center;
   transition: background 200ms ease;
   font-weight: 500;
   font-size: 16px;
@@ -89,24 +89,14 @@
   background-color: #212121cc;
 }
 
-.profile__new-post-plus {
-  margin: 0 8px 0 0;
-  width: 12px;
-  height: 12px;
-}
-
-@media screen and (max-width: 690px) {
-  .profile__header {
-    font-size: 20px;
-  }
-}
-
 @media screen and (max-width: 630px) {
   .profile {
     padding-top: 20px;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    max-width: 288px;
+    margin: 0 auto;
   }
 
   .profile__picture {
