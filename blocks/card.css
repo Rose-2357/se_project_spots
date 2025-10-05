@@ -62,5 +62,6 @@
   .card__like-icon {
     width: 20px;
     height: 18px;
+    background-size: 100%;
   }
 }
