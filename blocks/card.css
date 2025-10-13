@@ -63,7 +63,7 @@
   opacity: 0.4;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 630px) {
   .card__title {
     font-size: 16px;
     max-width: 235px;
@@ -73,5 +73,6 @@
     width: 20px;
     height: 18px;
     background-size: 100%;
+    background-repeat: no-repeat;
   }
 }
