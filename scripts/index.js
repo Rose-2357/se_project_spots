@@ -26,7 +26,6 @@ const initialCards = [
 ];
 
 initialCards.forEach((card) => {
-  console.log(card.name);
   createCard(card.name, card.link);
 });
 
@@ -124,5 +123,4 @@ function createCard(title, link) {
   cardTitle.textContent = title;
 
   document.querySelector(".cards").append(cardElement);
-  console.log("AAAA");
 }
