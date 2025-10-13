@@ -82,6 +82,13 @@ newPostForm.addEventListener("submit", (e) => {
   e.preventDefault();
   console.log(newPostLinkInput.value);
   console.log(newPostCaptionInput.value);
+
+  const newCardElement = {
+    link: newPostLinkInput.value,
+    name: newPostCaptionInput.value,
+  };
+  const newCard = getCardElement(newCardElement);
+  cardContainer.prepend(newCard);
   closeModal(newPostModal);
 });
 
