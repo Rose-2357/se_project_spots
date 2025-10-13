@@ -54,6 +54,15 @@
   opacity: 1;
 }
 
+.card__like-icon_liked {
+  background: url(../images/Like_Icon_active.svg);
+  opacity: 1;
+}
+
+.card__like-icon_liked:hover {
+  opacity: 0.4;
+}
+
 @media screen and (max-width: 640px) {
   .card__title {
     font-size: 16px;

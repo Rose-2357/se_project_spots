@@ -132,5 +132,9 @@ function getCardElement(data) {
   const cardTitle = cardElement.querySelector(".card__title");
   cardTitle.textContent = data.name;
 
+  const cardLikeBtn = cardElement.querySelector(".card__like-icon");
+  cardLikeBtn.addEventListener("click", (e) => {
+    e.target.classList.toggle("card__like-icon_liked");
+  });
   return cardElement;
 }
