@@ -39,86 +39,17 @@
           </button>
         </section>
         <ul class="cards">
-          <li class="card">
-            <figure class="card__image-wrapper">
-              <img
-                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="A house outside of the window in a mountaint covered in snow"
-                class="card__image"
-              />
-            </figure>
-            <div class="card__footer">
-              <p class="card__title">Val Thorens</p>
-              <button type="button" class="card__like-icon"></button>
-            </div>
-          </li>
-          <li class="card">
-            <figure class="card__image-wrapper">
-              <img
-                src="./images/2-photo-by-ceiline-from-pexels.jpg"
-                alt="A Restaurant"
-                class="card__image"
-              />
-            </figure>
-            <div class="card__footer">
-              <p class="card__title">Restaurant terrace</p>
-              <button type="button" class="card__like-icon"></button>
-            </div>
-          </li>
-          <li class="card">
-            <figure class="card__image-wrapper">
-              <img
-                src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-                alt="People sitting at a cafe"
-                class="card__image"
-              />
-            </figure>
-            <div class="card__footer">
-              <p class="card__title">An outdoor cafe</p>
-              <button type="button" class="card__like-icon"></button>
-            </div>
-          </li>
-          <li class="card">
-            <figure class="card__image-wrapper">
-              <img
-                src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
-                alt="A bridge that passes over a forest"
-                class="card__image"
-              />
-            </figure>
-            <div class="card__footer">
-              <p class="card__title">
-                A very long bridge, over the forest and through the trees
-              </p>
-              <button type="button" class="card__like-icon"></button>
-            </div>
-          </li>
-          <li class="card">
-            <figure class="card__image-wrapper">
-              <img
-                src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-                alt="A big hallway with glass walls"
-                class="card__image"
-              />
-            </figure>
-            <div class="card__footer">
-              <p class="card__title">Tunnel with morning light</p>
-              <button type="button" class="card__like-icon"></button>
-            </div>
-          </li>
-          <li class="card">
-            <figure class="card__image-wrapper">
-              <img
-                src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="a house in a mountaint covered in snow"
-                class="card__image"
-              />
-            </figure>
-            <div class="card__footer">
-              <p class="card__title">Mountain house</p>
-              <button type="button" class="card__like-icon"></button>
-            </div>
-          </li>
+          <template id="card-template">
+            <li class="card">
+              <figure class="card__image-wrapper">
+                <img class="card__image" />
+              </figure>
+              <div class="card__footer">
+                <p class="card__title"></p>
+                <button type="button" class="card__like-icon"></button>
+              </div>
+            </li>
+          </template>
         </ul>
       </main>
       <footer class="footer">

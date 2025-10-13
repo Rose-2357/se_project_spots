@@ -27,6 +27,7 @@ const initialCards = [
 
 initialCards.forEach((card) => {
   console.log(card.name);
+  createCard(card.name, card.link);
 });
 
 const editProfileModal = document.querySelector("#edit-profile-modal");
@@ -106,4 +107,22 @@ function closeModal(modal) {
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+}
+
+function createCard(title, link) {
+  const cardElement = document
+    .querySelector("#card-template")
+    .content.querySelector(".card")
+    .cloneNode(true);
+
+  const cardImg = cardElement.querySelector(".card__image");
+  cardImg.src = link;
+
+  cardImg.setAttribute("alt", title);
+
+  const cardTitle = cardElement.querySelector(".card__title");
+  cardTitle.textContent = title;
+
+  document.querySelector(".cards").append(cardElement);
+  console.log("AAAA");
 }
