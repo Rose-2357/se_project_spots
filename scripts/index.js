@@ -136,5 +136,11 @@ function getCardElement(data) {
   cardLikeBtn.addEventListener("click", (e) => {
     e.target.classList.toggle("card__like-button_liked");
   });
+
+  const cardDeleteBtn = cardElement.querySelector(".card__delete-button");
+  cardDeleteBtn.addEventListener("click", (e) => {
+    e.target.closest(".card").remove();
+  });
+
   return cardElement;
 }
