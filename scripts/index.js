@@ -26,10 +26,6 @@ const initialCards = [
 ];
 
 const cardContainer = document.querySelector(".cards");
-initialCards.forEach((card) => {
-  const newCard = getCardElement(card);
-  cardContainer.prepend(newCard);
-});
 
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileBtn = document.querySelector(".profile__edit");
@@ -51,6 +47,11 @@ const newPostCloseBtn = newPostModal.querySelector(".modal__close-button");
 const newPostLinkInput = newPostModal.querySelector("#modal-form-image-link");
 const newPostCaptionInput = newPostModal.querySelector("#modal-form-caption");
 const newPostForm = newPostModal.querySelector(".modal__form");
+
+initialCards.forEach((card) => {
+  const newCard = getCardElement(card);
+  cardContainer.prepend(newCard);
+});
 
 editProfileBtn.addEventListener("click", () => {
   openModal(editProfileModal);
