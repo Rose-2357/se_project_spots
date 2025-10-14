@@ -169,6 +169,11 @@
     right: 12px;
   }
 
+  .modal__close-button_modal_card {
+    top: -40px;
+    right: 0;
+  }
+
   .modal__save-button {
     width: 100%;
   }
