@@ -100,6 +100,7 @@ function closeModal(modal) {
     "--close-animation-duration"
   );
   let animationDurationMS;
+  let fallBackDuration = 500;
 
   if (animationDurationString.toLowerCase().endsWith("ms")) {
     animationDurationMS = parseFloat(animationDurationString);
@@ -111,7 +112,7 @@ function closeModal(modal) {
   }
   setTimeout(() => {
     modal.classList.remove("modal_close-animation");
-    modal.classList.remove("modal_is-opened");
+    closeModal(modal);
   }, animationDurationMS);
 }
 
