@@ -178,7 +178,7 @@ function addCardAndModal(card) {
   const newCardModal = getCardModal(newCard);
   newCard.prepend(newCardModal);
 
-  newCard.addEventListener("click", (e) => {
+  newCard.querySelector(".card__image").addEventListener("click", (e) => {
     const cardModal = e.target.closest(".card").querySelector(".modal");
     openModal(cardModal);
   });
