@@ -90,6 +90,7 @@ newPostForm.addEventListener("submit", (e) => {
   };
   addCardAndModal(newCardElement);
   closeModal(newPostModal);
+  newPostForm.reset();
 });
 
 function closeModal(modal) {
