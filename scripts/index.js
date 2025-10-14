@@ -49,8 +49,7 @@ const newPostCaptionInput = newPostModal.querySelector("#modal-form-caption");
 const newPostForm = newPostModal.querySelector(".modal__form");
 
 initialCards.forEach((card) => {
-  const newCard = getCardElement(card);
-  cardContainer.prepend(newCard);
+  addCardAndModal(card);
 });
 
 editProfileBtn.addEventListener("click", () => {
@@ -80,15 +79,12 @@ editProfileForm.addEventListener("submit", (e) => {
 
 newPostForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log(newPostLinkInput.value);
-  console.log(newPostCaptionInput.value);
 
   const newCardElement = {
     link: newPostLinkInput.value,
     name: newPostCaptionInput.value,
   };
-  const newCard = getCardElement(newCardElement);
-  cardContainer.prepend(newCard);
+  addCardAndModal(newCardElement);
   closeModal(newPostModal);
 });
 
@@ -143,4 +139,42 @@ function getCardElement(data) {
   });
 
   return cardElement;
+}
+
+function getCardModal(cardElement) {
+  const cardModal = document
+    .querySelector("#card-modal-template")
+    .content.querySelector(".modal")
+    .cloneNode(true);
+
+  const modalImg = cardModal.querySelector(".modal__image");
+  const cardImg = cardElement.querySelector(".card__image");
+
+  modalImg.src = cardImg.src;
+  modalImg.setAttribute("alt", `${cardImg.alt}`);
+
+  const modalTitle = cardModal.querySelector(".modal__title");
+  const cardTitle = cardElement.querySelector(".card__title");
+
+  modalTitle.textContent = cardTitle.textContent;
+
+  const modalCloseBtn = cardModal.querySelector(".modal__close-button");
+
+  modalCloseBtn.addEventListener("click", (e) => {
+    closeModal(e.target.closest(".modal"));
+  });
+
+  return cardModal;
+}
+
+function addCardAndModal(card) {
+  const newCard = getCardElement(card);
+  const newCardModal = getCardModal(newCard);
+  newCard.prepend(newCardModal);
+
+  newCard.addEventListener("click", (e) => {
+    const cardModal = e.target.closest(".card").querySelector(".modal");
+    openModal(cardModal);
+  });
+  cardContainer.prepend(newCard);
 }
