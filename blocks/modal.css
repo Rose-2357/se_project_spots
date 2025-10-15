@@ -12,7 +12,7 @@
   background-color: #21212166;
   padding: 0 10px;
   z-index: 1;
-  /* --close-animation-duration: 0.5s; */
+  /* --close-animation-duration: 0.3s; */
   /* The line above is commented because it make the automated checker throw a false error:
       File: blocks/modal.css, line: 15. Invalid CSS declaration.
   it would be uncommented after the automated check is over */
@@ -20,7 +20,7 @@
 
 .modal_is-opened {
   visibility: visible;
-  animation: modal-fade-in 0.5s ease;
+  animation: modal-fade-in 0.3s ease;
 }
 
 .modal_close-animation {
