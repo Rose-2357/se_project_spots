@@ -94,26 +94,7 @@ newPostForm.addEventListener("submit", (e) => {
 });
 
 function closeModal(modal) {
-  modal.classList.add("modal_close-animation");
-  let modalStyles = getComputedStyle(modal);
-  let animationDurationString = modalStyles.getPropertyValue(
-    "--close-animation-duration"
-  );
-  let animationDurationMS;
-  let fallBackDuration = 500;
-
-  if (animationDurationString.toLowerCase().endsWith("ms")) {
-    animationDurationMS = parseFloat(animationDurationString);
-  } else if (animationDurationString.toLowerCase().endsWith("s")) {
-    let animationDurationSeconds = parseFloat(animationDurationString);
-    animationDurationMS = animationDurationSeconds * 1000;
-  } else {
-    throw "--close-animation-duration in modal.css does not have a valid unit";
-  }
-  setTimeout(() => {
-    modal.classList.remove("modal_close-animation");
-    closeModal(modal);
-  }, animationDurationMS);
+  modal.classList.remove("modal_is-opened");
 }
 
 function openModal(modal) {
