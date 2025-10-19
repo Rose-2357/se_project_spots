@@ -63,29 +63,27 @@
         <div class="modal__container">
           <h2 class="modal__header">Edit profile</h2>
           <button class="modal__close-button"></button>
-          <form class="modal__form">
-            <label class="modal__label" for="modal-form-name">Name</label>
+          <form class="modal__form" name="editProfile">
+            <label class="modal__label" for="name">Name</label>
             <input
               required
               minlength="2"
               maxlength="40"
               type="text"
-              name="modal-form-name"
-              id="modal-form-name"
+              name="name"
+              id="name"
               class="modal__input"
               placeholder="Type your name"
             />
             <span class="modal__error-message"></span>
-            <label class="modal__label" for="modal-form-description"
-              >Description</label
-            >
+            <label class="modal__label" for="description">Description</label>
             <input
               required
               minlength="2"
               maxlength="200"
               type="text"
-              name="modal-form-description"
-              id="modal-form-description"
+              name="description"
+              id="description"
               class="modal__input"
               placeholder="Describe yourself"
             />
@@ -98,27 +96,25 @@
         <div class="modal__container">
           <h2 class="modal__header">New post</h2>
           <button class="modal__close-button"></button>
-          <form class="modal__form">
-            <label class="modal__label" for="modal-form-image-link"
-              >Image link</label
-            >
+          <form class="modal__form" name="newPost">
+            <label class="modal__label" for="image-link">Image link</label>
             <input
               required
               type="url"
-              name="modal-form-image-link"
-              id="modal-form-image-link"
+              name="image-link"
+              id="image-link"
               class="modal__input"
               placeholder="Paste a link to the picture"
             />
             <span class="modal__error-message"></span>
-            <label class="modal__label" for="modal-form-caption">Caption</label>
+            <label class="modal__label" for="caption">Caption</label>
             <input
               required
               minlength="2"
               maxlength="30"
               type="text"
-              name="modal-form-caption"
-              id="modal-form-caption"
+              name="caption"
+              id="caption"
               class="modal__input"
               placeholder="Type your caption"
             />
