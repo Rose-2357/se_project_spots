@@ -20,7 +20,6 @@ function toggleButtonState(inputList, buttonElement) {
 
 function enableValidation() {
   formList = Array.from(document.forms);
-  console.log(formList);
   formList.forEach((form) => {
     setEventListeners(form);
   });
