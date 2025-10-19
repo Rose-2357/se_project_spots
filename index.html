@@ -67,23 +67,29 @@
             <label class="modal__label" for="modal-form-name">Name</label>
             <input
               required
+              minlength="2"
+              maxlength="40"
               type="text"
               name="modal-form-name"
               id="modal-form-name"
               class="modal__input"
               placeholder="Type your name"
             />
+            <span class="modal__error-message"></span>
             <label class="modal__label" for="modal-form-description"
               >Description</label
             >
             <input
               required
+              minlength="2"
+              maxlength="200"
               type="text"
               name="modal-form-description"
               id="modal-form-description"
               class="modal__input"
               placeholder="Describe yourself"
             />
+            <span class="modal__error-message"></span>
             <button class="modal__save-button">Save</button>
           </form>
         </div>
@@ -104,15 +110,19 @@
               class="modal__input"
               placeholder="Paste a link to the picture"
             />
+            <span class="modal__error-message"></span>
             <label class="modal__label" for="modal-form-caption">Caption</label>
             <input
               required
+              minlength="2"
+              maxlength="30"
               type="text"
               name="modal-form-caption"
               id="modal-form-caption"
               class="modal__input"
               placeholder="Type your caption"
             />
+            <span class="modal__error-message"></span>
             <button class="modal__save-button">Save</button>
           </form>
         </div>
