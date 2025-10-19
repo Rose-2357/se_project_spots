@@ -55,9 +55,17 @@ initialCards.forEach((card) => {
 });
 
 editProfileBtn.addEventListener("click", () => {
-  openModal(editProfileModal);
+  const inputList = Array.from(
+    editProfileForm.querySelectorAll(".modal__input")
+  );
+  const buttonElement = editProfile.querySelector(".modal__save-button");
   profileNameInput.value = profileNameText.textContent;
   profileDescriptionInput.value = profileDescriptionText.textContent;
+  inputList.forEach((input) => {
+    checkValidity(input);
+    toggleButtonState(inputList, buttonElement);
+  });
+  openModal(editProfileModal);
 });
 
 editProfileCloseBtn.addEventListener("click", () => {
