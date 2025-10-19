@@ -118,10 +118,20 @@ function isOpened(modal) {
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keyup", closeOnEscape);
 }
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keyup", closeOnEscape);
+}
+
+function closeOnEscape(e) {
+  modalList.forEach((modal) => {
+    if (isOpened(modal) && e.key === "Escape") {
+      closeModal(modal);
+    }
+  });
 }
 
 function getCardElement(data) {
