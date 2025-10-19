@@ -1,6 +1,3 @@
-const target = document.forms.newPost;
-console.log(target);
-
 enableValidation();
 
 function isValid(input) {
