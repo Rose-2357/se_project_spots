@@ -50,6 +50,18 @@ const newPostCloseBtn = newPostModal.querySelector(".modal__close-button");
 const newPostLinkInput = newPostForm["image-link"];
 const newPostCaptionInput = newPostForm.caption;
 
+const modalList = Array.from(document.querySelectorAll(".modal"));
+
+modalList.forEach((modal) => {
+  modal.addEventListener("click", (e) => {
+    const mouseIsOnOverlay = e.target === e.currentTarget;
+
+    if (isOpened(modal) && mouseIsOnOverlay) {
+      closeModal(modal);
+    }
+  });
+});
+
 initialCards.forEach((card) => {
   addCardAndModal(card);
 });
@@ -98,6 +110,11 @@ newPostForm.addEventListener("submit", (e) => {
   closeModal(newPostModal);
   newPostForm.reset();
 });
+
+function isOpened(modal) {
+  const classArray = Array.from(modal.classList);
+  return classArray.some((modalClass) => modalClass === "modal_is-opened");
+}
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
