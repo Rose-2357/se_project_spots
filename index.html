@@ -64,26 +64,30 @@
           <h2 class="modal__header">Edit profile</h2>
           <button class="modal__close-button"></button>
           <form class="modal__form" name="editProfile">
-            <label class="modal__label" for="name">Name</label>
+            <label class="modal__label" for="edit-profile-form-name"
+              >Name</label
+            >
             <input
               required
               minlength="2"
               maxlength="40"
               type="text"
               name="name"
-              id="name"
+              id="edit-profile-form-name"
               class="modal__input"
               placeholder="Type your name"
             />
             <span class="modal__error-message"></span>
-            <label class="modal__label" for="description">Description</label>
+            <label class="modal__label" for="edit-profile-form-description"
+              >Description</label
+            >
             <input
               required
               minlength="2"
               maxlength="200"
               type="text"
               name="description"
-              id="description"
+              id="edit-profile-form-description"
               class="modal__input"
               placeholder="Describe yourself"
             />
@@ -97,24 +101,28 @@
           <h2 class="modal__header">New post</h2>
           <button class="modal__close-button"></button>
           <form class="modal__form" name="newPost">
-            <label class="modal__label" for="image-link">Image link</label>
+            <label class="modal__label" for="new-post-form-image-link"
+              >Image link</label
+            >
             <input
               required
               type="url"
               name="image-link"
-              id="image-link"
+              id="new-post-form-image-link"
               class="modal__input"
               placeholder="Paste a link to the picture"
             />
             <span class="modal__error-message"></span>
-            <label class="modal__label" for="caption">Caption</label>
+            <label class="modal__label" for="new-post-form-caption"
+              >Caption</label
+            >
             <input
               required
               minlength="2"
               maxlength="30"
               type="text"
               name="caption"
-              id="caption"
+              id="new-post-form-caption"
               class="modal__input"
               placeholder="Type your caption"
             />
