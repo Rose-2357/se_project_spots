@@ -36,21 +36,19 @@ const editProfileBtn = document.querySelector(".profile__edit");
 const editProfileCloseBtn = editProfileModal.querySelector(
   ".modal__close-button"
 );
-const editProfileForm = editProfileModal.querySelector(".modal__form");
+
+const editProfileForm = document.forms.editProfile;
+const newPostForm = document.forms.newPost;
 
 const profileNameText = document.querySelector(".profile__header");
-const profileNameInput = editProfileModal.querySelector("#modal-form-name");
+const profileNameInput = editProfileForm.name;
 const profileDescriptionText = document.querySelector(".profile__description");
-const profileDescriptionInput = editProfileModal.querySelector(
-  "#modal-form-description"
-);
-
+const profileDescriptionInput = editProfileForm.description;
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostBtn = document.querySelector(".profile__new-post");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-button");
-const newPostLinkInput = newPostModal.querySelector("#modal-form-image-link");
-const newPostCaptionInput = newPostModal.querySelector("#modal-form-caption");
-const newPostForm = newPostModal.querySelector(".modal__form");
+const newPostLinkInput = newPostForm["image-link"];
+const newPostCaptionInput = newPostForm.caption;
 
 initialCards.forEach((card) => {
   addCardAndModal(card);
