@@ -50,20 +50,14 @@ const newPostCloseBtn = newPostModal.querySelector(".modal__close-button");
 const newPostLinkInput = newPostForm["image-link"];
 const newPostCaptionInput = newPostForm.caption;
 
-const modalList = Array.from(document.querySelectorAll(".modal"));
-
-modalList.forEach((modal) => {
-  modal.addEventListener("click", (e) => {
-    const mouseIsOnOverlay = e.target === e.currentTarget;
-
-    if (isOpened(modal) && mouseIsOnOverlay) {
-      closeModal(modal);
-    }
-  });
-});
-
 initialCards.forEach((card) => {
   addCardAndModal(card);
+});
+
+document.addEventListener("click", (e) => {
+  if (!(e.target.classList.contains("modal") && isOpened(e.target))) return;
+
+  closeModal(e.target);
 });
 
 editProfileBtn.addEventListener("click", () => {
@@ -127,6 +121,7 @@ function openModal(modal) {
 }
 
 function closeOnEscape(e) {
+  const modalList = Array.from(document.querySelectorAll(".modal"));
   modalList.forEach((modal) => {
     if (isOpened(modal) && e.key === "Escape") {
       closeModal(modal);
