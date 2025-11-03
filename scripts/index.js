@@ -64,7 +64,7 @@ editProfileBtn.addEventListener("click", () => {
   const inputList = Array.from(
     editProfileForm.querySelectorAll(".modal__input")
   );
-  const buttonElement = editProfile.querySelector(".modal__save-button");
+  const buttonElement = editProfileForm.querySelector(".modal__save-button");
   profileNameInput.value = profileNameText.textContent;
   profileDescriptionInput.value = profileDescriptionText.textContent;
   inputList.forEach((input) => {
