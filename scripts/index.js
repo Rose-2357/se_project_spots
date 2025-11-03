@@ -67,10 +67,6 @@ editProfileBtn.addEventListener("click", () => {
   const buttonElement = editProfileForm.querySelector(".modal__save-button");
   profileNameInput.value = profileNameText.textContent;
   profileDescriptionInput.value = profileDescriptionText.textContent;
-  inputList.forEach((input) => {
-    checkValidity(input);
-    toggleButtonState(inputList, buttonElement);
-  });
   openModal(editProfileModal);
 });
 
