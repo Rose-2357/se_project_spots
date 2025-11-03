@@ -96,11 +96,11 @@ editProfileForm.addEventListener("submit", (e) => {
 newPostForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const newCardElement = {
+  const newCardObject = {
     link: newPostLinkInput.value,
     name: newPostCaptionInput.value,
   };
-  addCardAndModal(newCardElement);
+  addCardAndModal(newCardObject);
   closeModal(newPostModal);
   newPostForm.reset();
 });
