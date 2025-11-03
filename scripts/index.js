@@ -121,12 +121,9 @@ function openModal(modal) {
 }
 
 function closeOnEscape(e) {
-  const modalList = Array.from(document.querySelectorAll(".modal"));
-  modalList.forEach((modal) => {
-    if (isOpened(modal) && e.key === "Escape") {
-      closeModal(modal);
-    }
-  });
+  if (e.key !== "Escape") return;
+  const modal = document.querySelector(".modal_is-opened");
+  closeModal(modal);
 }
 
 function getCardElement(data) {
