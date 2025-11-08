@@ -1,4 +1,5 @@
 const settings = {
+  formSelector: ".modal__form",
   inactiveButtonClass: "modal__save-button_inactive",
   invalidInputClass: "modal__input_invalid",
   inputSelector: ".modal__input",
@@ -26,7 +27,7 @@ function toggleButtonState(inputList, buttonElement, config) {
 }
 
 function enableValidation(config) {
-  formList = Array.from(document.forms);
+  const formList = Array.from(document.querySelectorAll(config.formSelector));
   formList.forEach((form) => {
     setEventListeners(form, config);
   });
@@ -62,4 +63,12 @@ function checkValidity(input, config) {
   } else {
     hideErrorMessage(input, errorElement, config);
   }
+}
+
+function resetFormValidation(inputList, buttonElement) {
+  inputList.forEach((input) => {
+    const errorElement = document.querySelector(`#${input.id}-error`);
+    hideErrorMessage(input, errorElement, settings);
+  });
+  toggleButtonState(inputList, buttonElement, settings);
 }

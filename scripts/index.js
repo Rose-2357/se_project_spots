@@ -61,10 +61,6 @@ document.addEventListener("click", (e) => {
 });
 
 editProfileBtn.addEventListener("click", () => {
-  const inputList = Array.from(
-    editProfileForm.querySelectorAll(".modal__input")
-  );
-  const buttonElement = editProfileForm.querySelector(".modal__save-button");
   profileNameInput.value = profileNameText.textContent;
   profileDescriptionInput.value = profileDescriptionText.textContent;
   openModal(editProfileModal);
@@ -112,6 +108,9 @@ function closeModal(modal) {
 }
 
 function openModal(modal) {
+  const inputList = Array.from(modal.querySelectorAll(".modal__input"));
+  const buttonElement = modal.querySelector(".modal__save-button");
+  resetFormValidation(inputList, buttonElement);
   modal.classList.add("modal_is-opened");
   document.addEventListener("keyup", closeOnEscape);
 }
