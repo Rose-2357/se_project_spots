@@ -60,9 +60,14 @@ document.addEventListener("click", (e) => {
   closeModal(e.target);
 });
 
-editProfileBtn.addEventListener("click", () => {
+editProfileBtn.addEventListener("click", (e) => {
+  const inputList = Array.from(
+    editProfileModal.querySelectorAll(".modal__input")
+  );
+  const buttonElement = editProfileModal.querySelector(".modal__save-button");
   profileNameInput.value = profileNameText.textContent;
   profileDescriptionInput.value = profileDescriptionText.textContent;
+  resetFormValidation(inputList, buttonElement);
   openModal(editProfileModal);
 });
 
@@ -108,9 +113,6 @@ function closeModal(modal) {
 }
 
 function openModal(modal) {
-  const inputList = Array.from(modal.querySelectorAll(".modal__input"));
-  const buttonElement = modal.querySelector(".modal__save-button");
-  resetFormValidation(inputList, buttonElement);
   modal.classList.add("modal_is-opened");
   document.addEventListener("keyup", closeOnEscape);
 }
