@@ -47,18 +47,21 @@ const newPostLinkInput = newPostForm["image-link"];
 const newPostCaptionInput = newPostForm.caption;
 
 const cardModal = document.querySelector("#card-modal");
+const modals = document.querySelectorAll(".modal");
 
 initialCards.forEach((card) => {
   addCardElement(getCardElement(card));
 });
 
-document.addEventListener("click", (e) => {
-  if (
-    (e.target.classList.contains("modal") && isOpened(e.target)) ||
-    e.target.classList.contains("modal__close-button")
-  ) {
-    closeModal(e.target.closest(".modal"));
-  }
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", (e) => {
+    if (e.target.classList.contains("modal_is-opened")) {
+      closeModal(modal);
+    }
+    if (e.target.classList.contains("modal__close-button")) {
+      closeModal(modal);
+    }
+  });
 });
 
 editProfileBtn.addEventListener("click", (e) => {
@@ -93,12 +96,8 @@ newPostForm.addEventListener("submit", (e) => {
   addCardElement(getCardElement(newCardObject));
   closeModal(newPostModal);
   newPostForm.reset();
+  toggleButtonState;
 });
-
-function isOpened(modal) {
-  const classArray = Array.from(modal.classList);
-  return classArray.some((modalClass) => modalClass === "modal_is-opened");
-}
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
