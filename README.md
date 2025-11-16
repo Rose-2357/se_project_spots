@@ -8,6 +8,9 @@ Spots is a social media website used for sharing photos online
 - CSS Flexbox
 - CSS Grid
 - CSS media queries
+- JavaScript
+- Form validation
+- Event handlers
 
 ![Screenshot of the project](./demo-images/screenshot.png)
 
