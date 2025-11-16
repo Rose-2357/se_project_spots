@@ -41,12 +41,19 @@ const profileNameText = document.querySelector(".profile__header");
 const profileNameInput = editProfileForm.name;
 const profileDescriptionText = document.querySelector(".profile__description");
 const profileDescriptionInput = editProfileForm.description;
+const editProfileSaveBtn = editProfileModal.querySelector(
+  ".modal__save-button"
+);
+
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostBtn = document.querySelector(".profile__new-post");
 const newPostLinkInput = newPostForm["image-link"];
 const newPostCaptionInput = newPostForm.caption;
+const newPostSaveBtn = newPostForm.querySelector(".modal__save-button");
 
 const cardModal = document.querySelector("#card-modal");
+const cardModalImg = cardModal.querySelector(".modal__image");
+const cardModalTitle = cardModal.querySelector(".modal__title");
 const modals = document.querySelectorAll(".modal");
 
 initialCards.forEach((card) => {
@@ -68,10 +75,9 @@ editProfileBtn.addEventListener("click", (e) => {
   const inputList = Array.from(
     editProfileModal.querySelectorAll(".modal__input")
   );
-  const buttonElement = editProfileModal.querySelector(".modal__save-button");
   profileNameInput.value = profileNameText.textContent;
   profileDescriptionInput.value = profileDescriptionText.textContent;
-  resetFormValidation(inputList, buttonElement);
+  resetFormValidation(inputList, editProfileSaveBtn);
   openModal(editProfileModal);
 });
 
@@ -88,7 +94,7 @@ editProfileForm.addEventListener("submit", (e) => {
 
 newPostForm.addEventListener("submit", (e) => {
   e.preventDefault();
-
+  console.log(e.target);
   const newCardObject = {
     link: newPostLinkInput.value,
     name: newPostCaptionInput.value,
@@ -96,7 +102,8 @@ newPostForm.addEventListener("submit", (e) => {
   addCardElement(getCardElement(newCardObject));
   closeModal(newPostModal);
   newPostForm.reset();
-  toggleButtonState;
+  newPostSaveBtn.disabled = true;
+  newPostSaveBtn.classList.add("modal__save-button_inactive");
 });
 
 function closeModal(modal) {
@@ -140,12 +147,9 @@ function getCardElement(data) {
   });
 
   cardImg.addEventListener("click", () => {
-    const modalImg = cardModal.querySelector(".modal__image");
-    const modalTitle = cardModal.querySelector(".modal__title");
-
-    modalImg.src = cardImg.src;
-    modalImg.alt = cardImg.alt;
-    modalTitle.textContent = cardTitle.textContent;
+    cardModalImg.src = cardImg.src;
+    cardModalImg.alt = cardImg.alt;
+    cardModalTitle.textContent = cardTitle.textContent;
 
     openModal(cardModal);
   });
