@@ -94,7 +94,6 @@ editProfileForm.addEventListener("submit", (e) => {
 
 newPostForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log(e.target);
   const newCardObject = {
     link: newPostLinkInput.value,
     name: newPostCaptionInput.value,
@@ -102,8 +101,11 @@ newPostForm.addEventListener("submit", (e) => {
   addCardElement(getCardElement(newCardObject));
   closeModal(newPostModal);
   newPostForm.reset();
-  newPostSaveBtn.disabled = true;
-  newPostSaveBtn.classList.add("modal__save-button_inactive");
+  toggleButtonState(
+    [newPostCaptionInput, newPostLinkInput],
+    newPostSaveBtn,
+    settings
+  );
 });
 
 function closeModal(modal) {
