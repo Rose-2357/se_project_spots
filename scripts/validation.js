@@ -6,8 +6,6 @@ const settings = {
   submitButtonSelector: ".modal__save-button",
 };
 
-enableValidation(settings);
-
 function isValid(input) {
   return input.validity.valid;
 }
@@ -72,3 +70,5 @@ function resetFormValidation(inputList, buttonElement) {
   });
   toggleButtonState(inputList, buttonElement, settings);
 }
+
+export { enableValidation, settings, toggleButtonState, resetFormValidation };
