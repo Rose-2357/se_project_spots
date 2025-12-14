@@ -7,6 +7,32 @@ import {
 
 import "./index.css";
 
+import Api from "../utils/Api.js";
+
+import User from "../scripts/User.js";
+
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "bd9a8aa1-5590-4e32-89eb-21fb90be3d2c",
+    Content_Type: "application/json",
+  },
+});
+
+const user = new User(
+  ".profile__header",
+  ".profile__description",
+  ".profile__picture"
+);
+
+api
+  .getUserInfo()
+  .then((data) => {
+    user.setUserInfo(data);
+    user.loadUserData();
+  })
+  .catch((err) => console.error(err));
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -46,9 +72,10 @@ const editProfileBtn = document.querySelector(".profile__edit");
 const editProfileForm = document.forms.editProfile;
 const newPostForm = document.forms.newPost;
 
+const profilePicture = document.querySelector(".profile__picture");
 const profileNameText = document.querySelector(".profile__header");
-const profileNameInput = editProfileForm.name;
 const profileDescriptionText = document.querySelector(".profile__description");
+const profileNameInput = editProfileForm.name;
 const profileDescriptionInput = editProfileForm.description;
 const editProfileSaveBtn = editProfileModal.querySelector(
   ".modal__save-button"
