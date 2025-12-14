@@ -9,19 +9,21 @@
     />
     <meta name="keywords" content="photos, social media, sharing" />
     <meta name="author" content="Rose Ghaffari" />
-    <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     <title>Spots</title>
   </head>
   <body>
     <div class="page">
       <header class="header">
-        <img class="header__logo" src="./images/Logo.svg" alt="Spots Logo" />
+        <img
+          class="header__logo"
+          src="<%=require('./images/Logo.svg')%>"
+          alt="Spots Logo"
+        />
       </header>
       <main class="content">
         <section class="profile">
           <img
-            src="./images/avatar.jpg"
+            src="<%=require('./images/avatar.jpg')%>"
             alt="picture of Bessie Coleman"
             class="profile__picture"
           />
@@ -29,12 +31,12 @@
             <h1 class="profile__header">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
             <button class="profile__edit" type="button">
-              <img src="./images/pencil.svg" alt="A pencil" />
+              <img src="<%=require('./images/pencil.svg')%>" alt="A pencil" />
               Edit Profile
             </button>
           </div>
           <button class="profile__new-post" type="button">
-            <img src="./images/Plus.svg" alt="a plus sign" />
+            <img src="<%=require('./images/Plus.svg')%>" alt="a plus sign" />
             New Post
           </button>
         </section>
@@ -155,6 +157,5 @@
         </div>
       </div>
     </div>
-    <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>

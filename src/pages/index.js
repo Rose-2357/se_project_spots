@@ -3,7 +3,9 @@ import {
   settings,
   toggleButtonState,
   resetFormValidation,
-} from "./validation.js";
+} from "../scripts/validation.js";
+
+import "./index.css";
 
 const initialCards = [
   {
