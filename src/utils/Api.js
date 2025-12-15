@@ -22,6 +22,10 @@ export default class Api {
     }).then(this._handleResponse);
   }
 
+  getInfo() {
+    return Promise.all([this.getUserInfo(), this.getInitialCards()]);
+  }
+
   editUserInfo({ name, about }) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
@@ -33,7 +37,14 @@ export default class Api {
     }).then(this._handleResponse);
   }
 
-  getInfo() {
-    return Promise.all([this.getUserInfo(), this.getInitialCards()]);
+  postCard({ name, link }) {
+    return fetch(`${this._baseUrl}/cards`, {
+      method: "POST",
+      headers: this._headers,
+      body: JSON.stringify({
+        name,
+        link,
+      }),
+    }).then(this._handleResponse);
   }
 }

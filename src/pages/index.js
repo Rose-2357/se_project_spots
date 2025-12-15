@@ -14,7 +14,7 @@ import User from "../scripts/User.js";
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
-    authorization: "9f012fb0-4f68-460c-9642-788128245a37",
+    authorization: "aa876fd6-9064-46e6-ad0a-ab3745b3c8ed",
     "Content-Type": "application/json",
   },
 });
@@ -34,7 +34,10 @@ api
   })
   .then((cards) => {
     cards.forEach((card) => {
-      addCardElement(getCardElement({ name: card.name, link: card.link }));
+      addCardElement(
+        getCardElement({ name: card.name, link: card.link }),
+        true
+      );
     });
   })
   .catch((err) => console.error(err));
@@ -53,7 +56,7 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
   },
   {
-    name: "A very long bridge, over the forest and through the trees",
+    name: "A long bridge over the forest",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
   },
   {
@@ -133,7 +136,8 @@ editProfileForm.addEventListener("submit", (e) => {
     .then((data) => {
       user.setUserInfo(data);
       user.loadUserData();
-    });
+    })
+    .catch((err) => console.error(err));
   closeModal(editProfileModal);
 });
 
@@ -143,7 +147,10 @@ newPostForm.addEventListener("submit", (e) => {
     link: newPostLinkInput.value,
     name: newPostCaptionInput.value,
   };
-  addCardElement(getCardElement(newCardObject));
+  api
+    .postCard(newCardObject)
+    .then((data) => addCardElement(getCardElement(data), false))
+    .catch((err) => console.error(err));
   closeModal(newPostModal);
   newPostForm.reset();
   toggleButtonState(
@@ -204,7 +211,11 @@ function getCardElement(data) {
   return cardElement;
 }
 
-function addCardElement(card) {
+function addCardElement(card, initialize) {
+  if (initialize) {
+    cardContainer.append(card);
+    return;
+  }
   cardContainer.prepend(card);
 }
 
