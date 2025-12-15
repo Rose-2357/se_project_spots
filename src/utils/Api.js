@@ -1,16 +1,13 @@
 export default class Api {
-  constructor({ baseUrl, headers: { authorization, Content_Type } }) {
+  constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
-    this._authorization = authorization;
-    this._contentType = Content_Type;
+    this._headers = headers;
   }
 
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
       method: "GET",
-      headers: {
-        authorization: this._authorization,
-      },
+      headers: this._headers,
     }).then((res) =>
       res.ok ? res.json() : Promise.reject(`Error: ${res.status}`)
     );
@@ -19,9 +16,7 @@ export default class Api {
   getUserInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "GET",
-      headers: {
-        authorization: this._authorization,
-      },
+      headers: this._headers,
     }).then((res) =>
       res.ok ? res.json() : Promise.reject(`Error: ${res.status}`)
     );
