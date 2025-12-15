@@ -14,8 +14,8 @@ import User from "../scripts/User.js";
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
-    authorization: "bd9a8aa1-5590-4e32-89eb-21fb90be3d2c",
-    Content_Type: "application/json",
+    authorization: "9f012fb0-4f68-460c-9642-788128245a37",
+    "Content-Type": "application/json",
   },
 });
 
@@ -125,8 +125,15 @@ newPostBtn.addEventListener("click", () => {
 
 editProfileForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  profileNameText.textContent = profileNameInput.value;
-  profileDescriptionText.textContent = profileDescriptionInput.value;
+  api
+    .editUserInfo({
+      name: profileNameInput.value,
+      about: profileDescriptionInput.value,
+    })
+    .then((data) => {
+      user.setUserInfo(data);
+      user.loadUserData();
+    });
   closeModal(editProfileModal);
 });
 
