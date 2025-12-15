@@ -26,4 +26,8 @@ export default class Api {
       res.ok ? res.json() : Promise.reject(`Error: ${res.status}`)
     );
   }
+
+  getInfo() {
+    return Promise.all([this.getUserInfo(), this.getInitialCards()]);
+  }
 }

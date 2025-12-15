@@ -26,10 +26,16 @@ const user = new User(
 );
 
 api
-  .getUserInfo()
+  .getInfo()
   .then((data) => {
-    user.setUserInfo(data);
+    user.setUserInfo(data[0]);
     user.loadUserData();
+    return data[1];
+  })
+  .then((cards) => {
+    cards.forEach((card) => {
+      addCardElement(getCardElement({ name: card.name, link: card.link }));
+    });
   })
   .catch((err) => console.error(err));
 
@@ -91,10 +97,6 @@ const cardModal = document.querySelector("#card-modal");
 const cardModalImg = cardModal.querySelector(".modal__image");
 const cardModalTitle = cardModal.querySelector(".modal__title");
 const modals = document.querySelectorAll(".modal");
-
-initialCards.forEach((card) => {
-  addCardElement(getCardElement(card));
-});
 
 modals.forEach((modal) => {
   modal.addEventListener("mousedown", (e) => {
