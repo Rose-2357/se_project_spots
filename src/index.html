@@ -22,7 +22,18 @@
       </header>
       <main class="content">
         <section class="profile">
-          <img src="" alt="" class="profile__picture" />
+          <div class="profile__picture">
+            <img src="" alt="" class="profile__image" />
+            <button class="profile__picture-edit-button">
+              <span class="profile__picture-edit-button-text">
+                <img
+                  src="<%=require('./images/pencil-dark.svg')%>"
+                  alt="A pencil"
+                />
+                Edit avatar
+              </span>
+            </button>
+          </div>
           <div class="profile__text">
             <h1 class="profile__header"></h1>
             <p class="profile__description"></p>
@@ -175,6 +186,30 @@
             >
               Cancel
             </button>
+          </form>
+        </div>
+      </div>
+      <div class="modal" id="edit-avatar-modal">
+        <div class="modal__container">
+          <h2 class="modal__header">Edit profile avatar</h2>
+          <button class="modal__close-button"></button>
+          <form class="modal__form" name="editAvatar">
+            <label class="modal__label" for="edit-avatar-form-image-link"
+              >Profile Picture</label
+            >
+            <input
+              required
+              type="url"
+              name="image-link"
+              id="edit-avatar-form-image-link"
+              class="modal__input"
+              placeholder="Paste the link to an image"
+            />
+            <span
+              class="modal__error-message"
+              id="edit-avatar-form-image-link-error"
+            ></span>
+            <button class="modal__save-button">Save</button>
           </form>
         </div>
       </div>

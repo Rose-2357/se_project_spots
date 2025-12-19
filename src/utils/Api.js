@@ -2,7 +2,6 @@ export default class Api {
   constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
     this._headers = headers;
-    console.log(this._headers);
   }
 
   _handleResponse = (res) =>
@@ -37,6 +36,16 @@ export default class Api {
     }).then(this._handleResponse);
   }
 
+  editAvatar({ avatar }) {
+    return fetch(`${this._baseUrl}/users/me/avatar`, {
+      method: "PATCH",
+      headers: this._headers,
+      body: JSON.stringify({
+        avatar,
+      }),
+    }).then(this._handleResponse);
+  }
+
   postCard({ name, link }) {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
@@ -53,5 +62,13 @@ export default class Api {
       method: "DELETE",
       headers: this._headers,
     }).then(this._handleResponse);
+  }
+
+  handleCardLike(isLiked, cardId) {
+    const method = isLiked ? "DELETE" : "PUT";
+    return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
+      method,
+      headers: this._headers,
+    });
   }
 }

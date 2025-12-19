@@ -16,6 +16,7 @@ export default class User {
       this._nameElement.textContent = this._name;
       this._aboutElement.textContent = this._about;
       this._avatarElement.src = this._avatar;
+      this._avatarElement.alt = `${this._name}'s profile picture`;
     } else {
       throw new Error("User data is incomplete");
     }
