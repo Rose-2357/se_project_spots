@@ -14,7 +14,7 @@ import User from "../scripts/User.js";
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
-    authorization: "b3cf45ab-a205-4542-aabe-b7604be4593e",
+    authorization: "e1f631a2-32a4-4c9b-8910-6ee2c74d7e36",
     "Content-Type": "application/json",
   },
 });
