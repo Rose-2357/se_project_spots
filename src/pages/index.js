@@ -11,7 +11,7 @@ import Api from "../utils/Api.js";
 
 import User from "../scripts/User.js";
 
-import { renderLoading, handleFormSubmit } from "../utils/utils.js";
+import { handleFormSubmit } from "../utils/utils.js";
 
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",

@@ -1,4 +1,4 @@
-export function renderLoading(
+function renderLoading(
   isLoading,
   button,
   buttonText = "Save",
