@@ -159,7 +159,6 @@ editProfileForm.addEventListener("submit", (e) => {
         user.setUserInfo(data);
         user.loadUserData();
         closeModal(editProfileModal);
-        saveBtn.textContent = "Save";
       });
 
   handleFormSubmit(makeRequest, e);
